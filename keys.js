@@ -1,5 +1,6 @@
 console.log('keys has been loaded')
 
 exports.books = {
-    key: process.env.GOOGLE_KEY
+    baseurl: process.env.GOOGLE_baseurl,
+    apikey: process.env.GOOGLE_apikey
 };
