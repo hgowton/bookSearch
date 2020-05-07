@@ -50,6 +50,12 @@ class Search extends Component {
         this.searchBooks(this.state.search);
     };
 
+    saveBook = (book) => {
+        API.saveBook(book)
+        .then(res => )
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <Nav />

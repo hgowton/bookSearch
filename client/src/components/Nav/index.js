@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import Books from "../../../../../../UPENN-VIRT-FSF-PT-12-2019-U-LOL/20-react/01-Activities/11-Stu_ReactRouter/Solved/client/src/pages/Books";
 
 function Nav() {
     return(

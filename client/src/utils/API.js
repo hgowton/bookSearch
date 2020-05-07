@@ -4,22 +4,19 @@ import {baseurl, apikey} from "../../../keys.js"
 // const apikey = "&key=AIzaSyC2oiIbEanxSDxPaqNmUvgrVUV9b4SOQY8";
 
 export default {
-    //Gets all books
+    //Searched for books based on user's search query
   searchBooks: function(query) {
-    console.log("search books : " + query)
-    return axios.get(baseurl + query + apikey);
+    let url = baseurl + query + apikey
+    console.log("Search URL : " + url)
+    return axios.get(url);
   },
-  //Gets selected book based on id
-  getBook: function(id) {
-      return axios.get("/api/books/" + id);
-  },
-  //Deletes selected book based on id
+  //Removes selected book from saved list based on id
   deleteBook: function(id) {
-      return axios.delete("/api/books/" + id);
+      return axios.delete("/api" + id);
   },
   //Saves selected book from search to database
   saveBook: function(bookData) {
-      return axios.post("/api/books", 
+      return axios.post("/api", 
       {
         "id": bookDate.id,
         "title": bookData.title,
@@ -28,5 +25,8 @@ export default {
         "description": bookData.description,
         "link": bookData.link
       });
+  }, 
+  savedBook: function() {
+    return axios.get("/api")
   }
 };
