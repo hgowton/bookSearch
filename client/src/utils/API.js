@@ -20,7 +20,7 @@ export default {
       {
         "id": bookDate.id,
         "title": bookData.title,
-        "authors": [bookData.authors],
+        "authors": bookData.authors,
         "image": bookData.image,
         "description": bookData.description,
         "link": bookData.link

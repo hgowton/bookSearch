@@ -52,12 +52,13 @@ class Search extends Component {
 
     saveBook = (book) => {
         API.saveBook(book)
-        .then(res => )
+        .then(res => console.log(res))
         .catch(err => console.log(err))
     }
 
     render() {
-        return (
+        return (<div>
+
             <Nav />
             <Jumbotron />
             <Container fluid>
@@ -85,8 +86,9 @@ class Search extends Component {
                     <div>
                         <h3>Results</h3>
                         <List>
-                            {this.state.books.map(book => 
-                            <ListItem key={book.id}>
+                            {this.state.books.map(book => {
+
+                                <ListItem key={book.id}>
                                 <Row>
                                     <Col size="md-12">
                                         <h3>{book.title}</h3>
@@ -113,8 +115,10 @@ class Search extends Component {
                                     </Col>
                                 </Row>
                             </ListItem>
+                            } 
                         </List>
-                    </div> :
+                        </div> 
+                        :
                         <div> 
                             <h2> Use the search feature to create a list of possible reading suggestions!</h2>
                         </div>
@@ -122,6 +126,8 @@ class Search extends Component {
                 </Col>
                 </Row>
             </Container>
+            </div>
+
         )
     }
 }
