@@ -25,7 +25,6 @@ function Nav() {
                         : "nav-link"}>
                         Saved Books
                     </Link>
-                    }
                 </li>
             </ul>
         </div>

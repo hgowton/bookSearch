@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css"
+import "./styles.css"
 
 //The ...props prints all of the passed props onto this element
-export function DeleteBtn() {
+export function DeleteBtn(props) {
     return(
         <span className="delete-btn" {...props} role="button" tabIndex="0">
         Delete Book 
@@ -12,7 +12,7 @@ export function DeleteBtn() {
 
 export function ViewBtn() {
     return(
-        <span className="view-btn" {...props} role="button" tabIndex="0">
+        <span className="view-btn" role="button" tabIndex="0">
         View Book 
         </span>
     )
@@ -20,7 +20,7 @@ export function ViewBtn() {
 
 export function SaveBtn() {
     return(
-        <span className="save-btn" {...props} role="button" tabIndex="0">
+        <span className="save-btn" role="button" tabIndex="0">
         View Book 
         </span>
     )

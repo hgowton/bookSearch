@@ -1,12 +1,12 @@
 import axios from "axios";
-import {baseurl, apikey} from "../../../keys.js"
+import {baseurl, apikey} from "../keys"
 // const baseurl = "https://www.googleapis.com/books/v1/volumes?q=";
 // const apikey = "&key=AIzaSyC2oiIbEanxSDxPaqNmUvgrVUV9b4SOQY8";
 
 export default {
     //Searched for books based on user's search query
   searchBooks: function(query) {
-    let url = baseurl + query + apikey
+    let url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyC2oiIbEanxSDxPaqNmUvgrVUV9b4SOQY8"
     console.log("Search URL : " + url)
     return axios.get(url);
   },
@@ -18,7 +18,7 @@ export default {
   saveBook: function(bookData) {
       return axios.post("/api", 
       {
-        "id": bookDate.id,
+        "id": bookData.id,
         "title": bookData.title,
         "authors": bookData.authors,
         "image": bookData.image,

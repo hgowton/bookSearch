@@ -18,7 +18,8 @@ class Search extends Component {
     };
 
     searchBooks = query => {
-        API.search(query)
+        console.log("here")
+        API.searchBooks(query)
         .then(res => {
             const booksArray = []
             for (var i=0; i < res.data.items.length; i++) {
@@ -67,8 +68,8 @@ class Search extends Component {
                     <form>
                         <Input 
                         value={this.state.search}
-                        onChange={this.handleInputChange}
-                        name="query"
+                        handleInputChange={this.handleInputChange}
+                        name="search"
                         placeholder="Search for a book by author, subject, or title (Required)" 
                         />
                         <FormBtn 
@@ -86,7 +87,7 @@ class Search extends Component {
                     <div>
                         <h3>Results</h3>
                         <List>
-                            {this.state.books.map(book => {
+                            {this.state.books.map(book => 
 
                                 <ListItem key={book.id}>
                                 <Row>
@@ -105,17 +106,17 @@ class Search extends Component {
 
                                 <Row>
                                     <Col size="md-4">
+                                        {<img src={book.image} alt={book.title} className="img-fluid" />}
                                         {/* image for book if no thumbnail, show no cover image */}
-                                        ? <img src={book.image} alt={book.title} className="img-fluid" /> :
-                                        <img src={missing.image} alt="no cover image" className="img-fluid" />
+                                        {/* ? <img src={book.image} alt={book.title} className="img-fluid" /> :
+                                        <img src={missing.image} alt="no cover image" className="img-fluid" /> */}
 
                                     </Col>
                                     <Col size="md-8">
-                                        <p>{book.description}</p>
+                                        <p>{book.synopsis}</p>
                                     </Col>
                                 </Row>
-                            </ListItem>
-                            } 
+                            </ListItem>)} 
                         </List>
                         </div> 
                         :
@@ -131,3 +132,5 @@ class Search extends Component {
         )
     }
 }
+
+export default Search;
