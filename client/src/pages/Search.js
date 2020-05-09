@@ -96,7 +96,7 @@ class Search extends Component {
                                     </Col>
                                     <Col size="md-4">
                                         <ViewBtn href={book.link} />
-                                        <SaveBtn onClick={() => this.saveBook(book)} />
+                                        <SaveBtn onClick={this.saveBook(book)} />
                                     </Col>
                                 </Row>
 

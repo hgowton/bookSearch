@@ -10,19 +10,19 @@ export function DeleteBtn(props) {
     )
 }
 
-export function ViewBtn() {
+export function ViewBtn(props) {
     return(
-        <span className="view-btn" role="button" tabIndex="0">
-        View Book 
-        </span>
+        <button className="view-btn" >
+            <a href={props.href} target="_blank"> View Book </a>
+        </button>
     )
 }
 
-export function SaveBtn() {
+export function SaveBtn(props) {
     return(
-        <span className="save-btn" role="button" tabIndex="0">
+        <button className="save-btn" {...props} role="button" tabIndex="0">
         Save Book 
-        </span>
+        </button>
     )
 }
 
