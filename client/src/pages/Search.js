@@ -14,11 +14,10 @@ class Search extends Component {
     };
 
     componentDidMount() {
-        this.searchBooks();
+        this.searchBooks("Hunger Games");
     };
 
     searchBooks = query => {
-        console.log("here")
         API.searchBooks(query)
         .then(res => {
             const booksArray = []
@@ -91,28 +90,25 @@ class Search extends Component {
 
                                 <ListItem key={book.id}>
                                 <Row>
-                                    <Col size="md-12">
-                                        <h3>{book.title}</h3>
-                                        <ViewBtn href={book.link} />
+                                    <Col size="md-8">
+                                        <p className="book-title">{book.title}</p>
+                                        <p className="author">Author(s): {book.authors}</p>
                                     </Col>
-                                </Row>
-
-                                <Row>
-                                    <Col size="md-12">
-                                        <h3>Author(s): {book.authors}</h3>
+                                    <Col size="md-4">
+                                        <ViewBtn href={book.link} />
                                         <SaveBtn onClick={() => this.saveBook(book)} />
                                     </Col>
                                 </Row>
 
                                 <Row>
-                                    <Col size="md-4">
-                                        {<img src={book.image} alt={book.title} className="img-fluid" />}
+                                    <Col size="md-3">
+                                        {<img src={book.image} alt={book.title} className="img-fluid book-image" />}
                                         {/* image for book if no thumbnail, show no cover image */}
                                         {/* ? <img src={book.image} alt={book.title} className="img-fluid" /> :
                                         <img src={missing.image} alt="no cover image" className="img-fluid" /> */}
 
                                     </Col>
-                                    <Col size="md-8">
+                                    <Col size="md-9">
                                         <p>{book.synopsis}</p>
                                     </Col>
                                 </Row>

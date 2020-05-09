@@ -21,7 +21,7 @@ export function ViewBtn() {
 export function SaveBtn() {
     return(
         <span className="save-btn" role="button" tabIndex="0">
-        View Book 
+        Save Book 
         </span>
     )
 }

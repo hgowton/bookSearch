@@ -1,17 +1,26 @@
 .delete-btn {
     float: right;
     background-color: #e74944;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 8px;  
     color: white;
   }
 
 .view-btn {
   float: right;
   background-color: blue;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 8px;
   color: white;
 }
 
 .save-btn {
   float: right;
   background-color: green;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 8px;
   color: white;
 }
