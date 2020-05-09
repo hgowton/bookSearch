@@ -25,9 +25,9 @@ class Search extends Component {
                 booksArray.push(
                     {id: res.data.items[i].id,
                         title: res.data.items[i].volumeInfo.title,
-                        synopsis: res.data.items[i].volumeInfo.description,
                         authors: res.data.items[i].volumeInfo.authors,
                         image: res.data.items[i].volumeInfo.imageLinks.thumbnail,
+                        synopsis: res.data.items[i].volumeInfo.description,
                         link: res.data.items[i].volumeInfo.infoLink
                     })
                 }
@@ -51,6 +51,7 @@ class Search extends Component {
     };
 
     saveBook = (book) => {
+        console.log("Search component saveBook")
         API.saveBook(book)
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -96,13 +97,13 @@ class Search extends Component {
                                     </Col>
                                     <Col size="md-4">
                                         <ViewBtn href={book.link} />
-                                        <SaveBtn onClick={this.saveBook(book)} />
+                                        <SaveBtn onClick={() => this.saveBook(book)} />
                                     </Col>
                                 </Row>
 
                                 <Row>
                                     <Col size="md-3">
-                                        {<img src={book.image} alt={book.title} className="img-fluid book-image" />}
+                                        <img src={book.image} alt={book.title} className="img-fluid book-image" />
                                         {/* image for book if no thumbnail, show no cover image */}
                                         {/* ? <img src={book.image} alt={book.title} className="img-fluid" /> :
                                         <img src={missing.image} alt="no cover image" className="img-fluid" /> */}

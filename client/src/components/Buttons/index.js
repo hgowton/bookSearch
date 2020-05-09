@@ -20,7 +20,7 @@ export function ViewBtn(props) {
 
 export function SaveBtn(props) {
     return(
-        <button className="save-btn" {...props} role="button" tabIndex="0">
+        <button className="save-btn" {...props} tabIndex="0">
         Save Book 
         </button>
     )

@@ -16,6 +16,7 @@ export default {
   },
   //Saves selected book from search to database
   saveBook: function(bookData) {
+    console.log("SRC API saveBook")
       return axios.post("/api", 
       {
         "id": bookData.id,
@@ -26,7 +27,7 @@ export default {
         "link": bookData.link
       });
   }, 
-  savedBook: function() {
+  savedBooks: function() {
     return axios.get("/api")
   }
 };
