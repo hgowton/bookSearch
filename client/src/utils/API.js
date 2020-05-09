@@ -23,7 +23,7 @@ export default {
         "title": bookData.title,
         "authors": bookData.authors,
         "image": bookData.image,
-        "description": bookData.description,
+        "synopsis": bookData.description,
         "link": bookData.link
       });
   }, 

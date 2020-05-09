@@ -30,7 +30,10 @@ class Saved extends Component {
     render() {
         return(<div>
             <Nav />
-            <Jumbotron />
+            <Jumbotron>
+                <h1>Google Books Search</h1>
+                <h3>Review your books of interest below.</h3>
+            </Jumbotron>
             <Container fluid>
                 <Row>
                     <Col size="md-12">

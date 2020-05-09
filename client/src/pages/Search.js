@@ -51,7 +51,7 @@ class Search extends Component {
     };
 
     saveBook = (book) => {
-        console.log("Search component saveBook")
+        // console.log("Search component saveBook")
         API.saveBook(book)
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -61,7 +61,10 @@ class Search extends Component {
         return (<div>
 
             <Nav />
-            <Jumbotron />
+            <Jumbotron>
+                <h1>Google Books Search</h1>
+                <h3>Search for and save books of interest...</h3>
+            </Jumbotron>
             <Container fluid>
                 <Row>
                     <Col size="md-12">
@@ -102,8 +105,8 @@ class Search extends Component {
                                 </Row>
 
                                 <Row>
-                                    <Col size="md-3">
-                                        <img src={book.image} alt={book.title} className="img-fluid book-image" />
+                                    <Col size="md-3 book-image">
+                                        <img src={book.image} alt={book.title} className="img-fluid" />
                                         {/* image for book if no thumbnail, show no cover image */}
                                         {/* ? <img src={book.image} alt={book.title} className="img-fluid" /> :
                                         <img src={missing.image} alt="no cover image" className="img-fluid" /> */}

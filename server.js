@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 //Connect to Mongoose Database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbooklist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooklist");
 
 //Start the AP server
 app.listen(PORT, function() {

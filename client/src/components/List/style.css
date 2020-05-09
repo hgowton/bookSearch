@@ -31,4 +31,10 @@
   .list-overflow-container li:last-child {
     border-bottom: none;
   }
+
+  .book-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
