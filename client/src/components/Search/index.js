@@ -10,7 +10,14 @@ import styled from "styled-components";
 
 const Title = styled.p `
 color: blue;
-font-size: 2rem;`
+font-size: 1.8rem;
+margin-bottom: -.5rem;`
+
+const BookImage = styled.img `
+display: block;
+margin-left: auto;
+margin-right: auto;
+`
 
 class Search extends Component {
     state={
@@ -111,7 +118,7 @@ class Search extends Component {
 
                                 <Row>
                                     <Col size="md-3 book-image">
-                                        <img src={book.image} alt={book.title} className="img-fluid" />
+                                        <BookImage src={book.image} alt={book.title} className="img-fluid" />
 
                                     </Col>
                                     <Col size="md-9">

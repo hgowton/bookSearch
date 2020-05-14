@@ -1,15 +1,26 @@
 import React from "react";
-import "./style.css";
+import styled from "styled-components";
+
+const Card = styled.li `
+border-radius: 5px;
+margin-bottom: .8rem;
+padding: .5rem; 
+background-color: white;
+box-shadow: 0px 0px 5px 3px black;
+`
+
+const NoBullet = styled.ul `
+list-style-type: none;`
 
 export function List({children}) {
     return(
-        <div className="list-overflow-container">
-            <ul className="list-group">{children}</ul>
+        <div>
+            <NoBullet>{children}</NoBullet>
         </div>
     );
 }
 
 export function ListItem({ children }) {
-    return <li className="list-group-item">{children}</li>
+    return <Card>{children}</Card>
 }
 
