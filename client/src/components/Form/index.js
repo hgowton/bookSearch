@@ -1,4 +1,20 @@
 import React from "react";
+import styled from "styled-components";
+
+const Search = styled.button `
+float: right;
+background-color: green;
+padding: 5px;
+margin: 2px;
+border-radius: 5px;
+color: white;
+text-decoration: none;
+
+&:hover {
+    opacity: 0.8;
+    box-shadow: 0px 0px 3px 3px gray;
+}
+`
 
 export function Input(props) {
     return(
@@ -10,9 +26,9 @@ export function Input(props) {
 
 export function FormBtn(props) {
     return (
-        <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+        <Search {...props}>
             Search
-        </button>
+        </Search>
 
     )
 }

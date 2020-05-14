@@ -22,15 +22,15 @@ margin-right: auto;
 class Search extends Component {
     state={
         books: [],
-        search: ""
+        search: "",
     };
 
     componentDidMount() {
         this.searchBooks("Hunger Games");
     };
 
-    searchBooks = query => {
-        API.searchBooks(query)
+    searchBooks = search => {
+        API.searchBooks(search)
         .then(res => {
             const booksArray = []
             for (var i=0; i < res.data.items.length; i++) {
@@ -98,7 +98,7 @@ class Search extends Component {
             <Container fluid>
                 <Row>
                 <Col size="md-12">
-                    {this.state.books.length > 0 ? 
+                    {this.state.books.length ? 
                     <div>
                         <h3>Results</h3>
                         <List>
@@ -108,7 +108,7 @@ class Search extends Component {
                                 <Row>
                                     <Col size="md-8">
                                         <Title>{book.title}</Title>
-                                        <p className="author">Author(s): {book.authors}</p>
+                                        <p className="author">Author(s): {this.state.books.authors ? "No Author found" : book.authors} </p>
                                     </Col>
                                     <Col size="md-4">
                                         <ViewBtn href={book.link} />
@@ -118,11 +118,11 @@ class Search extends Component {
 
                                 <Row>
                                     <Col size="md-3 book-image">
-                                        <BookImage src={book.image} alt={book.title} className="img-fluid" />
+                                        <BookImage src={this.state.books.image ? "http://i.imgur.com/J5LVHEL.jpg" : book.image} alt={book.title} className="img-fluid" />
 
                                     </Col>
                                     <Col size="md-9">
-                                        <p>{book.synopsis}</p>
+                                        <p>{this.state.books.synopsis ? "No Synopsis Available" : book.synopsis}</p>
                                     </Col>
                                 </Row>
                             </ListItem>)} 

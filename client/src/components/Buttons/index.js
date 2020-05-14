@@ -12,7 +12,8 @@ color: white;
 text-decoration: none;
 
 &:hover {
-    background-color: pink;
+    opacity: 0.8;
+    box-shadow: 0px 0px 3px 3px gray;
 }
 `
 const Link = styled.a `
@@ -21,6 +22,7 @@ text-decoration: none;
 &:link, :hover, :active, :visited {
     text-decoration: none;
     color: white;
+    text-shadow: 0px 0px 2px black;
 }
 `
 
