@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { ViewBtn, SaveBtn } from "../components/Buttons";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import Nav from "../components/Nav";
-import { Col, Row, Container } from "../components/Grid";
-import {List, ListItem} from "../components/List";
-import {Input, FormBtn} from "../components/Form";
+import { ViewBtn, SaveBtn } from "../Buttons";
+import Jumbotron from "../Jumbotron";
+import API from "../../utils/API";
+import Nav from "../Nav";
+import { Col, Row, Container } from "../Grid";
+import {List, ListItem} from "../List";
+import {Input, FormBtn} from "../Form";
 
 class Search extends Component {
     state={
@@ -25,7 +25,7 @@ class Search extends Component {
                 booksArray.push(
                     {id: res.data.items[i].id,
                         title: res.data.items[i].volumeInfo.title,
-                        authors: res.data.items[i].volumeInfo.authors,
+                        authors: res.data.items[i].volumeInfo.authors[i],
                         image: res.data.items[i].volumeInfo.imageLinks.thumbnail,
                         synopsis: res.data.items[i].volumeInfo.description,
                         link: res.data.items[i].volumeInfo.infoLink

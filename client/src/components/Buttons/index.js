@@ -13,7 +13,7 @@ export function DeleteBtn(props) {
 export function ViewBtn(props) {
     return(
         <button className="view-btn" >
-            <a href={props.href} target="_blank"> View Book </a>
+            <a href={props.href} target="_blank" rel="noopener noreferrer"> View Book </a>
         </button>
     )
 }
