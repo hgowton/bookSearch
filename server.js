@@ -1,4 +1,4 @@
-const express = require("react");
+const express = require("express");
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -20,10 +20,10 @@ app.use(routes);
 
 //Connect to Mongoose Database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:12688BG@ds161164.mlab.com:61164/heroku_1mb8p0md";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true } );
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 
 // Start the API server
 app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+    console.log(`API Server now listening on PORT ${PORT}!`);
   });
   

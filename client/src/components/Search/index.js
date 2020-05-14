@@ -25,10 +25,6 @@ class Search extends Component {
         search: "",
     };
 
-    componentDidMount() {
-        this.searchBooks("Hunger Games");
-    };
-
     searchBooks = search => {
         API.searchBooks(search)
         .then(res => {
@@ -38,7 +34,7 @@ class Search extends Component {
                     {id: res.data.items[i].id,
                         title: res.data.items[i].volumeInfo.title,
                         authors: res.data.items[i].volumeInfo.authors,
-                        image: res.data.items[i].volumeInfo.imageLinks.thumbnail,
+                        image: res.data.items[i].volumeInfo.imageLinks ? res.data.items[i].volumeInfo.imageLinks.thumbnail : "http://i.imgur.com/J5LVHEL.jpg",
                         synopsis: res.data.items[i].volumeInfo.description,
                         link: res.data.items[i].volumeInfo.infoLink
                     })
@@ -63,7 +59,7 @@ class Search extends Component {
     };
 
     saveBook = (book) => {
-        console.log("Search component saveBook")
+        console.log(book)
         API.saveBook(book)
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -108,7 +104,7 @@ class Search extends Component {
                                 <Row>
                                     <Col size="md-8">
                                         <Title>{book.title}</Title>
-                                        <p className="author">Author(s): {this.state.books.authors ? "No Author found" : book.authors} </p>
+                                        <p className="author">Author(s): {book.authors || "No Author found"} </p>
                                     </Col>
                                     <Col size="md-4">
                                         <ViewBtn href={book.link} />
@@ -118,11 +114,11 @@ class Search extends Component {
 
                                 <Row>
                                     <Col size="md-3 book-image">
-                                        <BookImage src={this.state.books.image ? "http://i.imgur.com/J5LVHEL.jpg" : book.image} alt={book.title} className="img-fluid" />
+                                        <BookImage src={book.image || "http://i.imgur.com/J5LVHEL.jpg"} alt={book.title} className="img-fluid" />
 
                                     </Col>
                                     <Col size="md-9">
-                                        <p>{this.state.books.synopsis ? "No Synopsis Available" : book.synopsis}</p>
+                                        <p>{book.synopsis || "No Synopsis Available"}</p>
                                     </Col>
                                 </Row>
                             </ListItem>)} 

@@ -6,7 +6,7 @@ import axios from "axios";
 export default {
     //Searched for books based on user's search query
   searchBooks: function(query) {
-    let url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyC2oiIbEanxSDxPaqNmUvgrVUV9b4SOQY8"
+    let url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=" + process.env.API_KEY
     console.log("Search URL : " + url)
     return axios.get(url);
   },
