@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 //Connect to Mongoose Database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebookslist";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:12688BG@ds161164.mlab.com:61164/heroku_1mb8p0md";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true } );
 
 // Start the API server
