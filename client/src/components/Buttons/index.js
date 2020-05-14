@@ -1,5 +1,29 @@
 import React from "react";
 import "./styles.css"
+import styled from "styled-components";
+
+const View = styled.button `
+float: right;
+background-color: blue;
+padding: 5px;
+margin: 2px;
+border-radius: 8px;
+color: white;
+text-decoration: none;
+
+&:hover {
+    background-color: pink;
+}
+`
+const Link = styled.a `
+text-decoration: none;
+
+&:link, :hover, :active, :visited {
+    text-decoration: none;
+    color: white;
+}
+`
+
 
 //The ...props prints all of the passed props onto this element
 export function DeleteBtn(props) {
@@ -12,9 +36,9 @@ export function DeleteBtn(props) {
 
 export function ViewBtn(props) {
     return(
-        <button className="view-btn" >
-            <a href={props.href} target="_blank" rel="noopener noreferrer"> View Book </a>
-        </button>
+        <View>
+            <Link href={props.href} target="_blank" rel="noopener noreferrer"> View Book </Link>
+        </View>
     )
 }
 

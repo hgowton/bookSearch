@@ -6,6 +6,11 @@ import Nav from "../Nav";
 import { Col, Row, Container } from "../Grid";
 import {List, ListItem} from "../List";
 import {Input, FormBtn} from "../Form";
+import styled from "styled-components";
+
+const Title = styled.p `
+color: blue;
+font-size: 2rem;`
 
 class Search extends Component {
     state={
@@ -25,7 +30,7 @@ class Search extends Component {
                 booksArray.push(
                     {id: res.data.items[i].id,
                         title: res.data.items[i].volumeInfo.title,
-                        authors: res.data.items[i].volumeInfo.authors[i],
+                        authors: res.data.items[i].volumeInfo.authors,
                         image: res.data.items[i].volumeInfo.imageLinks.thumbnail,
                         synopsis: res.data.items[i].volumeInfo.description,
                         link: res.data.items[i].volumeInfo.infoLink
@@ -95,7 +100,7 @@ class Search extends Component {
                                 <ListItem key={book.id}>
                                 <Row>
                                     <Col size="md-8">
-                                        <p className="book-title">{book.title}</p>
+                                        <Title>{book.title}</Title>
                                         <p className="author">Author(s): {book.authors}</p>
                                     </Col>
                                     <Col size="md-4">
