@@ -1,12 +1,10 @@
 import axios from "axios";
-// import {baseurl, apikey} from "../keys"
-// const baseurl = "https://www.googleapis.com/books/v1/volumes?q=";
-// const apikey = "&key=AIzaSyC2oiIbEanxSDxPaqNmUvgrVUV9b4SOQY8";
+require('dotenv').config();
 
 export default {
     //Searched for books based on user's search query
   searchBooks: function(query) {
-    let url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=" + process.env.API_KEY
+    let url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=" + process.env.REACT_APP_API_KEY
     console.log("Search URL : " + url)
     return axios.get(url);
   },
