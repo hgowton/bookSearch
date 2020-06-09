@@ -6,7 +6,7 @@ module.exports = {
       console.log("made it to saved controller")
     db.Book
       .find(req.query)
-    //   .sort({ date: -1 })
+      .sort({ title: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

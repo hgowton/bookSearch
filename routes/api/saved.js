@@ -9,8 +9,6 @@ router.route("/")
 // Matches with "/api/saved/:id"
 router
   .route("/:id")
-//   .get(savedController.findById)
-//   .put(savedController.update)
   .delete(savedController.remove);
 
   module.exports = router;

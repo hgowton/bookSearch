@@ -10,7 +10,7 @@ margin: 2px;
 border-radius: 8px;
 color: white;
 text-decoration: none;
-width: 2rem;
+width: 75px;
 
 &:hover {
     opacity: 0.8;
