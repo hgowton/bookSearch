@@ -4,7 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import Nav from "../components/Nav";
 import { Col, Row, Container } from "../components/Grid";
 import {List, ListItem} from "../components/List";
-import { Title, BookImage, Header1, Header3 } from "../components/Styled";
+import { Header1, Header3, Title,Subtitle, BookImage } from "../components/Styled";
 import API from "../utils/API";
 
 class Saved extends Component {
@@ -49,7 +49,7 @@ class Saved extends Component {
                     <Col size="md-12">
                         {this.state.books.length > 0 ?
                         <div>
-                            <h3>Saved Books</h3>
+                            <Subtitle>Saved Books</Subtitle>
                             <List>
                                 {this.state.books.map(book =>
                                     <ListItem key ={book._id}>

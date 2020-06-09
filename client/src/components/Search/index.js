@@ -6,7 +6,7 @@ import Nav from "../Nav";
 import { Col, Row, Container } from "../Grid";
 import {List, ListItem} from "../List";
 import {Input, FormBtn} from "../Form";
-import { Header1, Header3, Title, BookImage } from "../Styled";
+import { Header1, Header3, Title, Subtitle, BookImage, Wrapper } from "../Styled";
 
 
 
@@ -53,29 +53,31 @@ class Search extends Component {
                 <Header3>Search for and save books of interest...</Header3>
             </Jumbotron>
             <Container fluid>
-                <Row>
-                    <Col size="md-12">
                     <form>
+                <Row>
+                    <Col size="md-10">
                         <Input 
                         value={this.state.search}
                         handleInputChange={this.handleInputChange}
                         name="search"
                         placeholder="Search for a book by author, subject, or title (Required)" 
                         />
+                    </Col>
+                    <Col size="md-2">
                         <FormBtn 
                         disabled={!(this.state.search)}
                         onClick={this.handleFormSubmit} 
                         />
-                    </form>
                     </Col> 
                 </Row>
+                    </form>
             </Container>
             <Container fluid>
                 <Row>
                 <Col size="md-12">
                     {this.state.books.length ? 
                     <div>
-                        <h3>Results</h3>
+                        <Subtitle>Results</Subtitle>
                         <List>
                             {this.state.books.map(book => 
 
@@ -104,9 +106,9 @@ class Search extends Component {
                         </List>
                         </div> 
                         :
-                        <div> 
-                            <h2> Use the search feature to create a list of possible reading suggestions!</h2>
-                        </div>
+                        <Wrapper> 
+                            <Subtitle> Use the search feature to create a list of possible reading suggestions!</Subtitle>
+                        </Wrapper>
                     }
                 </Col>
                 </Row>

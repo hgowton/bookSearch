@@ -14,6 +14,17 @@ font-family: 'Fira Sans Condensed', sans-serif;
 export const Header3 = styled.h3 `
 font-family: 'Open Sans Condensed', sans-serif;
 `
+export const Subtitle = styled.h3 `
+font-family: 'Open Sans Condensed', sans-serif;
+color: white;
+text-shadow: 0px 0px 3px black;
+`
+
+export const Wrapper = styled.section `
+background-color: #1e6cc7;
+text-align: center;
+padding: 0.5rem;
+margin: 1rem`
 
 export const ImageWrapper = styled.div `
 width: 100%;
@@ -53,6 +64,21 @@ width: 75px;
 
 &:hover {
     opacity: 0.8;
+    box-shadow: 0px 0px 3px 3px gray;
+}
+`
+export const Search = styled.button `
+float: right;
+background-color: green;
+font-size: 1.3rem;
+padding: 5px;
+margin: 2px;
+border-radius: 5px;
+color: white;
+text-decoration: none;
+
+&:hover {
+    transform: scale(1.1);
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
