@@ -17,7 +17,7 @@ width: 2rem;
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
-const aLink = styled.a `
+const ALink = styled.a `
 text-decoration: none;
 
 &:link, :hover, :active, :visited {
@@ -40,7 +40,7 @@ export function DeleteBtn(props) {
 export function ViewBtn(props) {
     return(
         <View>
-            <aLink href={props.href} target="_blank" rel="noopener noreferrer"> View Book </aLink>
+            <ALink href={props.href} target="_blank" rel="noopener noreferrer"> View Book </ALink>
         </View>
     )
 }
