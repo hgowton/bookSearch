@@ -18,7 +18,8 @@ export default {
     console.log("in API save")
       return axios.post("/api/books", bookData);
   }, 
-  savedBooks: function() {
-    return axios.get("/api/books")
+  returnBooks: function() {
+    console.log("saved API")
+    return axios.get("/api/saved")
   }
 };

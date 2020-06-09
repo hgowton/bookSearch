@@ -12,11 +12,11 @@ class Saved extends Component {
     }
     
     componentDidMount() {
-        this.savedBooks()
+        this.savedBooks(this.state.books)
     }
 
     savedBooks = () => {
-        API.savedBooks()
+        API.returnBooks()
         .then(res => this.setState({ 
             books: res.data,
             id: "",
@@ -25,7 +25,8 @@ class Saved extends Component {
             synopsis: "",
             image: "",
             link: ""
-        }))
+        })
+        )
         .catch(err => console.log(err))
     }
 
