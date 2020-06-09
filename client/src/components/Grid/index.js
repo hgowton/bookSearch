@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 
 //Exporting the Container, Row, and Col components for Bootstrap without having to worry about classes in App.js
 

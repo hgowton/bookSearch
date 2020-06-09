@@ -6,18 +6,9 @@ import Nav from "../Nav";
 import { Col, Row, Container } from "../Grid";
 import {List, ListItem} from "../List";
 import {Input, FormBtn} from "../Form";
-import styled from "styled-components";
+import { Title, BookImage } from "../Styled";
 
-const Title = styled.p `
-color: blue;
-font-size: 1.8rem;
-margin-bottom: -.5rem;`
 
-const BookImage = styled.img `
-display: block;
-margin-left: auto;
-margin-right: auto;
-`
 
 class Search extends Component {
     state={

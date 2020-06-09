@@ -4,6 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import Nav from "../components/Nav";
 import { Col, Row, Container } from "../components/Grid";
 import {List, ListItem} from "../components/List";
+import { Title, BookImage } from "../components/Styled";
 import API from "../utils/API";
 
 class Saved extends Component {
@@ -54,7 +55,7 @@ class Saved extends Component {
                                     <ListItem key ={book._id}>
                                         <Row>
                                             <Col size="md-8">
-                                                <p className="book-title">{book.title}</p>
+                                                <Title className="book-title">{book.title}</Title>
                                                 <p className="author">{book.authors}</p>
                                             </Col>
                                             <Col size="md-4">
@@ -64,7 +65,7 @@ class Saved extends Component {
                                         </Row>
                                         <Row>
                                             <Col size="md-3">
-                                                <img src={book.image} alt={book.title} className="img-fluid book-image" />
+                                                <BookImage src={book.image} alt={book.title} className="img-fluid book-image" />
                                             </Col>
                                             <Col size="md-9">
                                                 <p>{book.synopsis}</p>
