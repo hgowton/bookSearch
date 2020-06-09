@@ -14,7 +14,7 @@ export function Input(props) {
 export function FormBtn(props) {
     return (
         <Search {...props}>
-            Search
+            <i className="fas fa-search"></i> Search
         </Search>
 
     )

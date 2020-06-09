@@ -59,11 +59,13 @@ padding: 5px;
 margin: 2px;
 border-radius: 8px;
 color: white;
+font-size: 1rem;
+text-shadow: 0px 0px 5px black;
 text-decoration: none;
-width: 75px;
+width: 125px;
 
 &:hover {
-    opacity: 0.8;
+    opacity: 0.95;
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
@@ -76,6 +78,7 @@ margin: 2px;
 border-radius: 5px;
 color: white;
 text-decoration: none;
+text-shadow: 0px 0px 5px black;
 
 &:hover {
     transform: scale(1.1);
@@ -90,11 +93,32 @@ padding: 5px;
 margin: 2px;
 border-radius: 8px;
 color: white;
+font-size: 1rem;
 text-decoration: none;
-width: 75px;
+width: 125px;
+text-shadow: 0px 0px 5px black;
 
 &:hover {
-    opacity: 0.8;
+    opacity: 0.95;
+    box-shadow: 0px 0px 3px 3px gray;
+}
+`
+
+export const Delete = styled.span `
+float: right;
+background-color: red;
+padding: 5px;
+margin: 2px;
+border-radius: 8px;
+color: white;
+text-decoration: none;
+font-size: 1rem;
+width: 125px;
+text-align: center;
+text-shadow: 0px 0px 5px black;
+
+&:hover {
+    opacity: 0.95;
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
