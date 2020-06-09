@@ -4,7 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import Nav from "../components/Nav";
 import { Col, Row, Container } from "../components/Grid";
 import {List, ListItem} from "../components/List";
-import { Title, BookImage } from "../components/Styled";
+import { Title, BookImage, Header1, Header3 } from "../components/Styled";
 import API from "../utils/API";
 
 class Saved extends Component {
@@ -41,8 +41,8 @@ class Saved extends Component {
         return(<div>
             <Nav />
             <Jumbotron>
-                <h1>Google Books Search</h1>
-                <h3>Review your books of interest below.</h3>
+                <Header1>Google Books Search</Header1>
+                <Header3>Review your books of interest below.</Header3>
             </Jumbotron>
             <Container fluid>
                 <Row>

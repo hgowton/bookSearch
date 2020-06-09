@@ -7,6 +7,14 @@ text-align: center;
 color: white;
 margin-bottom: 1rem;
 `
+export const Header1 = styled.h1 `
+font-family: 'Fira Sans Condensed', sans-serif;
+`
+
+export const Header3 = styled.h3 `
+font-family: 'Open Sans Condensed', sans-serif;
+`
+
 export const ImageWrapper = styled.div `
 width: 100%;
 height: 150px;
@@ -22,8 +30,9 @@ transform: translateX(-50%);
 `
 
 export const Title = styled.p `
-color: blue;
+color: #1e6cc7;
 font-size: 1.8rem;
+font-family: 'Roboto Condensed', sans-serif;
 margin-bottom: -.5rem;`
 
 export const BookImage = styled.img `
@@ -34,7 +43,7 @@ margin-right: auto;
 
 export const View = styled.button `
 float: right;
-background-color: blue;
+background-color: #1e6cc7;
 padding: 5px;
 margin: 2px;
 border-radius: 8px;

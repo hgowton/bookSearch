@@ -6,7 +6,7 @@ import Nav from "../Nav";
 import { Col, Row, Container } from "../Grid";
 import {List, ListItem} from "../List";
 import {Input, FormBtn} from "../Form";
-import { Title, BookImage } from "../Styled";
+import { Header1, Header3, Title, BookImage } from "../Styled";
 
 
 
@@ -49,8 +49,8 @@ class Search extends Component {
 
             <Nav />
             <Jumbotron>
-                <h1>Google Books Search</h1>
-                <h3>Search for and save books of interest...</h3>
+                <Header1>Google Books Search</Header1>
+                <Header3>Search for and save books of interest...</Header3>
             </Jumbotron>
             <Container fluid>
                 <Row>
