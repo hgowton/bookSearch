@@ -17,6 +17,23 @@ width: 2rem;
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
+
+const Save = styled.button `
+float: right;
+background-color: #146028;
+padding: 5px;
+margin: 2px;
+border-radius: 8px;
+color: white;
+text-decoration: none;
+width: 75px;
+
+&:hover {
+    opacity: 0.8;
+    box-shadow: 0px 0px 3px 3px gray;
+}
+`
+
 const ALink = styled.a `
 text-decoration: none;
 
@@ -47,9 +64,9 @@ export function ViewBtn(props) {
 
 export function SaveBtn(props) {
     return(
-        <button className="save-btn" style={"width: 2rem"} {...props} tabIndex="0">
+        <Save {...props} tabIndex="0">
         Save Book 
-        </button>
+        </Save>
     )
 }
 

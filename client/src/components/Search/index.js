@@ -28,7 +28,6 @@ class Search extends Component {
     searchBooks = search => {
         API.searchBooks(search)
         .then(res => {
-            console.log("here?: " , res.data)
             this.setState({ books: res.data})
         })
         .catch(err => console.log(err))
@@ -50,10 +49,7 @@ class Search extends Component {
     saveBook = (book) => {
         console.log(book)
         API.saveBook(book)
-        .then(res => {
-            console.log("here?: " , res.data)
-            this.setState({ books: res.data})
-        })
+        .then(res => console.log(res))
         .catch(err => console.log(err))
     }
 
@@ -100,7 +96,7 @@ class Search extends Component {
                                     </Col>
                                     <Col size="md-4">
                                         <ViewBtn href={book.link} />
-                                        {/* <SaveBtn onClick={() => this.saveBook(book)} /> */}
+                                        <SaveBtn onClick={() => this.saveBook(book)} />
                                     </Col>
                                 </Row>
 
