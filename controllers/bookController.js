@@ -1,14 +1,26 @@
 const db = require("../models");
+const axios = require("axios");
 
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
-      console.log("inside findAll")
-    db.Book
-      .find(req.query)
-      .sort({ title: 1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      const { query: params } = req;
+    let url = `https://www.googleapis.com/books/v1/volumes?q=${params.search}&key=${process.env.REACT_APP_API_KEY}`
+    console.log("book search controller URL: ", url)
+    axios.get(url)
+    .then(results => results.data.items.map(
+      result =>
+      ({
+        id: result.id,
+        title: result.volumeInfo.title,
+        authors: result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : "http://i.imgur.com/J5LVHEL.jpg",
+        synopsis: result.volumeInfo.description,
+        link: result.volumeInfo.infoLink
+      })
+    )
+    )
+    .then(books => res.json(books))
+    .catch(err => console.error(err))
   },
   findById: function(req, res) {
     db.Book

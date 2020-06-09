@@ -10,13 +10,14 @@ margin: 2px;
 border-radius: 8px;
 color: white;
 text-decoration: none;
+width: 2rem;
 
 &:hover {
     opacity: 0.8;
     box-shadow: 0px 0px 3px 3px gray;
 }
 `
-const Link = styled.a `
+const aLink = styled.a `
 text-decoration: none;
 
 &:link, :hover, :active, :visited {
@@ -39,14 +40,14 @@ export function DeleteBtn(props) {
 export function ViewBtn(props) {
     return(
         <View>
-            <Link href={props.href} target="_blank" rel="noopener noreferrer"> View Book </Link>
+            <aLink href={props.href} target="_blank" rel="noopener noreferrer"> View Book </aLink>
         </View>
     )
 }
 
 export function SaveBtn(props) {
     return(
-        <button className="save-btn" {...props} tabIndex="0">
+        <button className="save-btn" style={"width: 2rem"} {...props} tabIndex="0">
         Save Book 
         </button>
     )

@@ -21,7 +21,7 @@ class Saved extends Component {
             books: res.data,
             id: "",
             title: "",
-            author: "",
+            authors: "",
             synopsis: "",
             image: "",
             link: ""

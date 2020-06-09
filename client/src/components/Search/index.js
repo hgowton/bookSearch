@@ -27,23 +27,29 @@ class Search extends Component {
 
     searchBooks = search => {
         API.searchBooks(search)
-        .then(res => {
-            const booksArray = []
-            for (var i=0; i < res.data.items.length; i++) {
-                booksArray.push(
-                    {id: res.data.items[i].id,
-                        title: res.data.items[i].volumeInfo.title,
-                        authors: res.data.items[i].volumeInfo.authors,
-                        image: res.data.items[i].volumeInfo.imageLinks ? res.data.items[i].volumeInfo.imageLinks.thumbnail : "http://i.imgur.com/J5LVHEL.jpg",
-                        synopsis: res.data.items[i].volumeInfo.description,
-                        link: res.data.items[i].volumeInfo.infoLink
-                    })
-                }
-                this.setState({ books: booksArray, search : ""});
-                console.log(this.state.books)
-            })
-        .catch(err => console.log(err));
-    };
+        .then(res => console.log("here?: " ,res))
+        .catch(err => console.log(err))
+    }
+
+    // searchBooks = search => {
+    //     API.searchBooks(search)
+    //     .then(res => {
+    //         const booksArray = []
+    //         for (var i=0; i < res.data.items.length; i++) {
+    //             booksArray.push(
+    //                 {id: res.data.items[i].id,
+    //                     title: res.data.items[i].volumeInfo.title,
+    //                     authors: res.data.items[i].volumeInfo.authors,
+    //                     image: res.data.items[i].volumeInfo.imageLinks ? res.data.items[i].volumeInfo.imageLinks.thumbnail : "http://i.imgur.com/J5LVHEL.jpg",
+    //                     synopsis: res.data.items[i].volumeInfo.description,
+    //                     link: res.data.items[i].volumeInfo.infoLink
+    //                 })
+    //             }
+    //             this.setState({ books: booksArray, search : ""});
+    //             console.log(this.state.books)
+    //         })
+    //     .catch(err => console.log(err));
+    // };
 
     handleInputChange = event => {
         const value = event.target.value;
