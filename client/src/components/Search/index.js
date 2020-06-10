@@ -67,7 +67,7 @@ class Search extends Component {
                         <FormBtn 
                         disabled={!(this.state.search)}
                         onClick={this.handleFormSubmit} 
-                        />
+                        required />
                     </Col> 
                 </Row>
                     </form>

@@ -6,7 +6,7 @@ import { Search } from "../Styled";
 export function Input(props) {
     return(
         <div className="form-group">
-            <input className="form-control" name={props.name} onChange={props.handleInputChange} />
+            <input type="text" className="form-control" name={props.name} onChange={props.handleInputChange} required/>
         </div>
     );
 }
