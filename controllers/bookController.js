@@ -13,7 +13,7 @@ module.exports = {
       ({
         id: result.id,
         title: result.volumeInfo.title,
-        authors: result.volumeInfo.authors,
+        authors: result.volumeInfo.authors ? result.volumeInfo.authors : 'No Author found',
         image: result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : "http://i.imgur.com/J5LVHEL.jpg",
         synopsis: result.volumeInfo.description,
         link: result.volumeInfo.infoLink

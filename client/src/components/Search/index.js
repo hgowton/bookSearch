@@ -85,6 +85,8 @@ class Search extends Component {
                                 <Row>
                                     <Col size="md-8">
                                         <Title>{book.title}</Title>
+                                        {/* <p className="author">Author(s): {book.authors.map(author => book.authors.length - 1 === book.authors.indexOf(author) ? author : author + ", ")} </p> */}
+                                        {/* <p className="author">Author(s): {book.authors} </p> */}
                                         <p className="author">Author(s): {book.authors || "No Author found"} </p>
                                     </Col>
                                     <Col size="md-4">
